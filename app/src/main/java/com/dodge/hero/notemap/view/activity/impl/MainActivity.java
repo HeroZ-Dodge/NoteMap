@@ -11,10 +11,16 @@ import com.dodge.hero.notemap.view.activity.IMainActivity;
 public class MainActivity extends BaseMVPActivity<MainPresenter> implements IMainActivity{
 
 
+    MainPresenter mPresenter;
+
+    @Override
+    protected int getLayoutRes() {
+        return R.layout.activity_main;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         mPresenter = new MainPresenter();
         mPresenter.attachView(this);
         findViewById(R.id.btn_hello).setOnClickListener(view -> {

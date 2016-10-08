@@ -1,20 +1,78 @@
 package com.dodge.hero.commontlibrary.view.activity;
 
 import android.os.Bundle;
+import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+
+import com.dodge.hero.commontlibrary.R;
 
 /**
  * Created by LinZheng on 2016/10/8.
  */
 
-public abstract class BaseActivity extends AppCompatActivity{
+public abstract class BaseActivity extends AppCompatActivity {
 
+    protected View mRootView;
+
+    protected Toolbar mToolbar;
+
+    protected FrameLayout mFrameLayout;
+
+
+    private TextView mTvTitle;
+
+    protected abstract int getLayoutRes();
+
+
+    @Override
+    public void setContentView(@LayoutRes int layoutResID) {
+        LayoutInflater inflater = getLayoutInflater();
+        mRootView = inflater.inflate(R.layout.base_activity, null);
+        mFrameLayout = (FrameLayout) mRootView.findViewById(R.id.content_frame_layout);
+        inflater.inflate(layoutResID, mFrameLayout, true);
+        super.setContentView(mRootView);
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(getLayoutRes());
+        initToolbar();
     }
+
+    protected void initToolbar() {
+        mToolbar = (Toolbar) findViewById(R.id.tool_bar);
+        mTvTitle = (TextView) findViewById(R.id.tv_tool_bar_title);
+        if (mToolbar != null) {
+            mToolbar.setNavigationIcon(getNavigationIcon());
+            mToolbar.setNavigationOnClickListener(view ->
+                    onNavigationOnClick());
+            mToolbar.setTitle("");
+            setSupportActionBar(mToolbar);
+            mTvTitle.setText(getTitleText());
+        }
+    }
+
+    protected CharSequence getTitleText() {
+        return getTitle();
+    }
+
+
+    protected int getNavigationIcon() {
+        return R.mipmap.ic_launcher;
+    }
+
+
+    protected void onNavigationOnClick() {
+
+    }
+
 
     @Override
     protected void onStart() {

@@ -9,14 +9,13 @@ import com.dodge.hero.commontlibrary.presenter.BasePresenter;
 public abstract class BaseMVPActivity<P extends BasePresenter> extends BaseActivity {
 
 
-    protected P mPresenter;
 
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (mPresenter != null) {
-            mPresenter.detachView();
+        if (getPresenter() != null) {
+            getPresenter().detachView();
         }
     }
 
