@@ -76,7 +76,7 @@ public class DefaultExpansionView extends ExpansionView {
     public void showErrorView(int resId, String msg) {
         if (mErrorView == null) {
             mErrorView = mInflater.inflate(mViewConfig.mErrorViewRes, mContentLayout, false);
-            mErrorView.setOnClickListener(view -> {
+            mErrorView.findViewById(R.id.iv_error).setOnClickListener(view -> {
                 if (mClickListener != null) {
                     mClickListener.onErrorViewClick();
                 }
@@ -111,7 +111,7 @@ public class DefaultExpansionView extends ExpansionView {
     public void showEmptyView(int resId, String msg) {
         if (mEmptyView == null) {
             mEmptyView = mInflater.inflate(mViewConfig.mEmptyViewRes, mContentLayout, false);
-            mEmptyView.setOnClickListener(view -> {
+            mEmptyView.findViewById(R.id.iv_empty).setOnClickListener(view -> {
                 if (mClickListener != null) {
                     mClickListener.onEmptyViewClick();
                 }

@@ -40,6 +40,7 @@ public class MainActivity extends BaseMVPActivity<MainPresenter> implements IMai
         findViewById(R.id.btn_error).setOnClickListener(view -> {
             mExpansionView.showErrorView();
         });
+        findViewById(R.id.btn_empty).setOnClickListener(view -> mExpansionView.showEmptyView());
     }
 
     @Override

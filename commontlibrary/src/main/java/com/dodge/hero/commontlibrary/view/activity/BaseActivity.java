@@ -40,7 +40,7 @@ public abstract class BaseActivity extends AppCompatActivity implements IBaseVie
     @Override
     public void setContentView(@LayoutRes int layoutResID) {
         LayoutInflater inflater = getLayoutInflater();
-        mRootView = inflater.inflate(R.layout.base_activity, null);
+        mRootView = inflater.inflate(R.layout.base_activity, null, false);
         mFrameLayout = (FrameLayout) mRootView.findViewById(R.id.content_frame_layout);
         inflater.inflate(layoutResID, mFrameLayout, true);
         super.setContentView(mRootView);
@@ -50,10 +50,10 @@ public abstract class BaseActivity extends AppCompatActivity implements IBaseVie
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutRes());
-        initToolbar();
-        initExpansionView();
-        initView();
-        initData();
+        initToolbar();          // 初始工具栏
+        initExpansionView();    //  初始扩展视图
+        initView();             //  初始控件
+        initData();             //  初始数据
     }
 
 
@@ -118,7 +118,7 @@ public abstract class BaseActivity extends AppCompatActivity implements IBaseVie
      * 菜单点击事件
      */
     protected void onNavigationOnClick() {
-
+        // 子类重写
     }
 
 
