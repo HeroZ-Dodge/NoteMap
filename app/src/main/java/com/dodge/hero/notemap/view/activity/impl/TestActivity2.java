@@ -1,9 +1,9 @@
 package com.dodge.hero.notemap.view.activity.impl;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
+import com.dodge.hero.commontlibrary.tools.EncryptUtil;
 import com.dodge.hero.commontlibrary.view.activity.BaseActivity;
 import com.dodge.hero.notemap.R;
 
@@ -30,8 +30,9 @@ public class TestActivity2 extends BaseActivity {
         action = getIntent().getStringExtra("action");
         setTitleStr("Test 2");
         findViewById(R.id.btn_hello).setOnClickListener(view -> {
-            Intent intent = new Intent(TestActivity2.this, TestActivity3.class);
-            startActivity(intent);
+            System.out.println(EncryptUtil.md5("123456"));
+//            Intent intent = new Intent(TestActivity2.this, TestActivity3.class);
+//            startActivity(intent);
         });
     }
 

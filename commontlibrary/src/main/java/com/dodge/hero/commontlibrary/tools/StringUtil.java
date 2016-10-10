@@ -25,7 +25,7 @@ public class StringUtil {
     /**
      * 判断字符串是否为空和是否等于""
      */
-    public static boolean isNotNull2(String string) {
+    public static boolean isNotEmpty(String string) {
         if (string != null && !string.equals("")) {
             return true;
         } else {
