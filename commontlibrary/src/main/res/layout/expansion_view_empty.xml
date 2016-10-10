@@ -2,22 +2,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
+              android:background="@color/default_white"
               android:gravity="center"
               android:orientation="vertical">
 
 
     <ImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/iv_empty"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_empty"/>
 
 
     <TextView
         android:id="@+id/tv_empty_msg"
         style="@style/common_ext_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/expansion_view_empty"/>
+        android:layout_marginTop="8dp"
+        android:text="@string/expansion_view_empty"
+        android:textColor="@color/text_color_purple"
+        android:textSize="14sp"/>
 
 
 </LinearLayout>

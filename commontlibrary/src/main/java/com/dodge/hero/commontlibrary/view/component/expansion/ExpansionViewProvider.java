@@ -1,4 +1,4 @@
-package com.dodge.hero.commontlibrary.view.component;
+package com.dodge.hero.commontlibrary.view.component.expansion;
 
 import android.widget.FrameLayout;
 

@@ -4,9 +4,10 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
+    <color name="default_white">#EDEDED</color>
 
     <!-- TextColor -->
     <color name="text_color_black_87">#de000000</color>
-    <color name="text_clolor_blac_57">#91000000</color>
-
+    <color name="text_color_black_57">#91000000</color>
+    <color name="text_color_purple">#272636</color>
 </resources>

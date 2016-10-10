@@ -37,6 +37,9 @@ public class MainActivity extends BaseMVPActivity<MainPresenter> implements IMai
             intent.putExtra("action", "ok");
             startActivity(intent);
         });
+        findViewById(R.id.btn_error).setOnClickListener(view -> {
+            mExpansionView.showErrorView();
+        });
     }
 
     @Override

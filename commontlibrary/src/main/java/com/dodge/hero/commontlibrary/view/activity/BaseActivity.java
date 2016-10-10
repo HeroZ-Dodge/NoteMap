@@ -2,23 +2,26 @@ package com.dodge.hero.commontlibrary.view.activity;
 
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import com.dodge.hero.commontlibrary.R;
-import com.dodge.hero.commontlibrary.view.component.ExpansionView;
-import com.dodge.hero.commontlibrary.view.component.ExpansionViewProvider;
+import com.dodge.hero.commontlibrary.view.IBaseView;
+import com.dodge.hero.commontlibrary.view.component.expansion.ExpansionView;
+import com.dodge.hero.commontlibrary.view.component.expansion.ExpansionViewProvider;
 
 /**
  * 基础Activity
  * Created by LinZheng on 2016/10/8.
  */
 
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity implements IBaseView, ExpansionView.ExpansionViewClickListener {
 
     protected View mRootView; // 根布局
 
@@ -54,6 +57,18 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
 
+    @NonNull
+    @Override
+    public ExpansionView getExpansionView() {
+        return mExpansionView;
+    }
+
+    @NonNull
+    @Override
+    public ViewGroup getContentLayout() {
+        return mFrameLayout;
+    }
+
     /**
      * 初始化toolbar 工具栏
      */
@@ -72,6 +87,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      */
     protected void initExpansionView() {
         mExpansionView = ExpansionViewProvider.DEFAULT.createExpansionView(mFrameLayout);
+        mExpansionView.setClickListener(this);
     }
 
     protected CharSequence getTitleText() {
@@ -105,6 +121,20 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     }
 
+
+    @Override
+    public void onEmptyViewClick() {
+        if (mExpansionView != null) {
+            mExpansionView.dismissEmptyView();
+        }
+    }
+
+    @Override
+    public void onErrorViewClick() {
+        if (mExpansionView != null) {
+            mExpansionView.dismissErrorView();
+        }
+    }
 
     @Override
     protected void onStart() {
