@@ -1,4 +1,4 @@
-package com.dodge.hero.commontlibrary.view.commont;
+package com.dodge.hero.commontlibrary.view.component;
 
 /**
  * Created by LinZheng on 2016/10/9.

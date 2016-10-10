@@ -10,8 +10,8 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import com.dodge.hero.commontlibrary.R;
-import com.dodge.hero.commontlibrary.view.commont.ExpansionView;
-import com.dodge.hero.commontlibrary.view.commont.ExpansionViewProvider;
+import com.dodge.hero.commontlibrary.view.component.ExpansionView;
+import com.dodge.hero.commontlibrary.view.component.ExpansionViewProvider;
 
 /**
  * 基础Activity

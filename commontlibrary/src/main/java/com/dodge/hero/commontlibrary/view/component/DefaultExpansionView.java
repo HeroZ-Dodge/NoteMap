@@ -1,4 +1,4 @@
-package com.dodge.hero.commontlibrary.view.commont;
+package com.dodge.hero.commontlibrary.view.component;
 
 import android.view.LayoutInflater;
 import android.view.View;
