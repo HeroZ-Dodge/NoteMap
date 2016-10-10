@@ -2,6 +2,8 @@ package com.dodge.hero.notemap.view.activity.impl;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -57,5 +59,25 @@ public class MainActivity extends BaseMVPActivity<MainPresenter> implements IMai
     @Override
     protected MainPresenter getPresenter() {
         return mPresenter;
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_activity_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_add:
+                Toast.makeText(MainActivity.this, "add", Toast.LENGTH_SHORT).show();
+                break;
+
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
