@@ -3,6 +3,9 @@ package com.dodge.hero.notemap.di;
 import android.app.Activity;
 import android.app.Application;
 
+import com.dodge.hero.commontlibrary.dagger.module.CacheModule;
+import com.dodge.hero.commontlibrary.dagger.module.CommonActivityModule;
+import com.dodge.hero.commontlibrary.dagger.module.CommonAppModule;
 import com.dodge.hero.notemap.di.component.ActivityComponent;
 import com.dodge.hero.notemap.di.component.AppComponent;
 import com.dodge.hero.notemap.di.component.DaggerActivityComponent;
@@ -25,6 +28,8 @@ public class DI {
 
     private static void initComponent(Application application) {
         mAppComponent = DaggerAppComponent.builder()
+                .cacheModule(new CacheModule())
+                .commonAppModule(new CommonAppModule(application))
                 .appModule(new AppModule(application))
                 .build();
     }
@@ -37,7 +42,8 @@ public class DI {
     public static ActivityComponent makeActivityComponent(Activity activity) {
         return  DaggerActivityComponent.builder()
                 .appComponent(getAppComponent())
-                .activityModule(new ActivityModule(activity))
+                .commonActivityModule(new CommonActivityModule(activity))
+                .activityModule(new ActivityModule())
                 .build();
     }
 

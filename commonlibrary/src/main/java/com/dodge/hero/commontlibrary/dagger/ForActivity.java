@@ -1,4 +1,4 @@
-package com.dodge.hero.notemap.di;
+package com.dodge.hero.commontlibrary.dagger;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

@@ -1,9 +1,11 @@
-package com.dodge.hero.notemap.di.component;
+package com.dodge.hero.commontlibrary.dagger.component;
 
-import com.dodge.hero.commontlibrary.dagger.component.CommonAppComponent;
+import android.app.Application;
+import android.content.Context;
+
 import com.dodge.hero.commontlibrary.dagger.module.CacheModule;
 import com.dodge.hero.commontlibrary.dagger.module.CommonAppModule;
-import com.dodge.hero.notemap.di.module.AppModule;
+import com.dodge.hero.commontlibrary.data.cache.ICache;
 
 import javax.inject.Singleton;
 
@@ -16,14 +18,16 @@ import dagger.Component;
 @Component(
         modules = {
                 CommonAppModule.class,
-                CacheModule.class,
-
-                AppModule.class
+                CacheModule.class
         }
 )
-public interface AppComponent extends CommonAppComponent {
+public interface CommonAppComponent {
+
+    Context applicationContext();
 
 
-        String appName();
+    Application application();
+
+    ICache cache();
 
 }

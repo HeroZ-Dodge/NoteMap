@@ -1,7 +1,6 @@
 package com.dodge.hero.notemap.di.module;
 
 import android.app.Application;
-import android.content.Context;
 
 import javax.inject.Singleton;
 
@@ -24,14 +23,9 @@ public class AppModule {
 
     @Provides
     @Singleton
-    Application provideApplication() {
-        return this.mApplication;
+    String provideAppName() {
+        return mApplication.getClass().getSimpleName();
     }
 
-    @Provides
-    @Singleton
-    Context provideAppContext() {
-        return this.mApplication.getApplicationContext();
-    }
 
 }
