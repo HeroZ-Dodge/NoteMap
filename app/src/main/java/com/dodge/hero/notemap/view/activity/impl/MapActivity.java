@@ -1,25 +1,26 @@
 package com.dodge.hero.notemap.view.activity.impl;
 
+import android.app.Application;
+import android.content.Context;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.baidu.location.BDLocation;
-import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.baidu.location.Poi;
 import com.baidu.mapapi.map.BaiduMap;
-import com.baidu.mapapi.map.MapStatus;
 import com.baidu.mapapi.map.MapStatusUpdate;
 import com.baidu.mapapi.map.MapStatusUpdateFactory;
 import com.baidu.mapapi.map.MapView;
 import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.model.LatLng;
-import com.dodge.hero.commontlibrary.data.cache.ICache;
 import com.dodge.hero.commontlibrary.view.activity.BaseActivity;
 import com.dodge.hero.notemap.R;
+import com.dodge.hero.notemap.di.DI;
 
 import java.util.List;
+
+import javax.inject.Inject;
 
 /**
  * Created by z on 2016/10/10.
@@ -32,6 +33,11 @@ public class MapActivity extends BaseActivity {
     private BaiduMap mMap;
     private LocationClient mLocationClient;
 
+@Inject
+    Context mContext;
+
+    @Inject
+    Application mApplication;
 
     @Override
     protected int getLayoutRes() {
@@ -40,7 +46,9 @@ public class MapActivity extends BaseActivity {
 
     @Override
     public void initView() {
-
+        DI.makeActivityComponent(this).inject(this);
+        Log.d(this.getClass().getSimpleName(), mContext.toString());
+        Log.d(this.getClass().getSimpleName(), mApplication.toString());
         initMap();
     }
 
