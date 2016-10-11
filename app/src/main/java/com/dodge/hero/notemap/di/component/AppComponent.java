@@ -3,6 +3,7 @@ package com.dodge.hero.notemap.di.component;
 import com.dodge.hero.commontlibrary.dagger.component.CommonAppComponent;
 import com.dodge.hero.commontlibrary.dagger.module.CacheModule;
 import com.dodge.hero.commontlibrary.dagger.module.CommonAppModule;
+import com.dodge.hero.notemap.data.entity.DaoSession;
 import com.dodge.hero.notemap.di.module.AppModule;
 
 import javax.inject.Singleton;
@@ -25,5 +26,8 @@ public interface AppComponent extends CommonAppComponent {
 
 
         String appName();
+
+        DaoSession daoSession();
+
 
 }

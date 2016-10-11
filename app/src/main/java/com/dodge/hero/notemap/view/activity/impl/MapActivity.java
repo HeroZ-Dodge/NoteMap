@@ -151,6 +151,8 @@ public class MapActivity extends BaseActivity {
     @Override
     protected void initData() {
 
+
+
     }
 
 
