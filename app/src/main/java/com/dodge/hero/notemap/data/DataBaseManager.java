@@ -35,7 +35,7 @@ public class DataBaseManager {
     }
 
 
-    private <T extends AbstractDao> T getDao(Class<? extends Object> entityClass) {
+    public  <T extends AbstractDao> T getDao(Class<? extends Object> entityClass) {
         AbstractDao<?, ?> dao = mDaoSession.getDao(entityClass);
         return (T) dao;
     }

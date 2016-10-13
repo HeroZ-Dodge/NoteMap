@@ -10,11 +10,14 @@ import android.widget.Toast;
 
 import com.dodge.hero.commontlibrary.view.activity.BaseMVPActivity;
 import com.dodge.hero.notemap.R;
+import com.dodge.hero.notemap.dao.MapPointDao;
 import com.dodge.hero.notemap.data.DataBaseManager;
 import com.dodge.hero.notemap.data.entity.MapPoint;
 import com.dodge.hero.notemap.di.DI;
 import com.dodge.hero.notemap.presenter.MainPresenter;
 import com.dodge.hero.notemap.view.activity.IMainActivity;
+
+import org.greenrobot.greendao.AbstractDao;
 
 import java.util.List;
 
@@ -58,6 +61,18 @@ public class MainActivity extends BaseMVPActivity<MainPresenter> implements IMai
         });
         findViewById(R.id.btn_empty).setOnClickListener(view -> {
             mDataBaseManager.insert(new MapPoint(null, "222", "2342"));
+        });
+        findViewById(R.id.btn_delete).setOnClickListener(v -> {
+            AbstractDao<MapPoint, ?> dao = mDataBaseManager.getDao(MapPoint.class);
+            List<MapPoint> mapPoints = dao.queryBuilder()
+                    .offset(5)
+                    .limit(Integer.MAX_VALUE)
+                    .list();
+            dao.deleteInTx(mapPoints);
+            dao.getDatabase()
+                    .execSQL("delete from " + MapPointDao.TABLENAME + " where ");
+            Log.d("GreenDao", "记录大于5,删除了" + mapPoints.size() +  "个记录");
+
         });
     }
 
