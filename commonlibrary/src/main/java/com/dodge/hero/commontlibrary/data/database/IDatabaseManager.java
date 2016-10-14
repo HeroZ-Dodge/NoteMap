@@ -54,4 +54,5 @@ public interface IDatabaseManager {
     <T extends IDaoEntity> void execSQL(Class<T> tClass, String sql);
 
     <T extends IDaoEntity> void loadList(Class<T> tClass, WhereCondition whereCondition, int size, int offset, AsyncCallBack<List<T>> asyncCallBack);
+
 }

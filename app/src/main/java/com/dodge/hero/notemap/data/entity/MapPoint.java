@@ -1,5 +1,7 @@
 package com.dodge.hero.notemap.data.entity;
 
+import com.dodge.hero.commontlibrary.data.database.IDaoEntity;
+
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Id;
 import org.greenrobot.greendao.annotation.NotNull;
@@ -9,7 +11,7 @@ import org.greenrobot.greendao.annotation.Generated;
  * Created by LinZheng on 2016/10/11.
  */
 @Entity
-public class MapPoint {
+public class MapPoint implements IDaoEntity{
 
     @Id(autoincrement = true)
     private Long id;
