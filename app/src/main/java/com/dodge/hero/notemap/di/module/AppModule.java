@@ -6,6 +6,7 @@ import com.dodge.hero.commontlibrary.data.database.IDatabaseManager;
 import com.dodge.hero.commontlibrary.data.database.impl.GreenDaoManager;
 import com.dodge.hero.notemap.dao.DaoMaster;
 import com.dodge.hero.notemap.dao.DaoSession;
+import com.dodge.hero.notemap.data.db.DBOpenHelper;
 
 import org.greenrobot.greendao.database.Database;
 
@@ -43,7 +44,7 @@ public class AppModule {
     @Provides
     @Singleton
     IDatabaseManager provideDatabaseManager(Application application) {
-        DaoMaster.DevOpenHelper helper = new DaoMaster.DevOpenHelper(application, ENCRYPTED ? DATA_BASE_NAME_ENCRYPTED : DATA_BASE_NAME);
+        DaoMaster.OpenHelper helper = new DBOpenHelper(application, ENCRYPTED ? DATA_BASE_NAME_ENCRYPTED : DATA_BASE_NAME);
         Database db = ENCRYPTED ? helper.getEncryptedWritableDb(DATA_BASE_PASSWORD) : helper.getWritableDb();
         DaoSession session = new DaoMaster(db).newSession();
         return new GreenDaoManager(session);

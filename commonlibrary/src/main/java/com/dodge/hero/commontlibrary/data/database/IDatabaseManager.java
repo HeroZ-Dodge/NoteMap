@@ -41,6 +41,8 @@ public interface IDatabaseManager {
 
     <T extends IDaoEntity> List<T> loadList(Class<T> tClass, int size);
 
+    <T extends IDaoEntity> List<T> loadList(Class<T> tClass, String where, String... arg);
+
     <T extends IDaoEntity> List<T> loadList(Class<T> tClass, int size, int offset);
 
     <T extends IDaoEntity> void loadList(Class<T> tClass, int size, AsyncCallBack<List<T>> asyncCallBack);

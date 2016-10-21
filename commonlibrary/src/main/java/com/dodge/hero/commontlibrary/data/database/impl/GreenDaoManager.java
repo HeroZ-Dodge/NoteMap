@@ -212,6 +212,12 @@ public class GreenDaoManager implements IDatabaseManager {
         return loadList(tClass, size, 0);
     }
 
+    @Override
+    public <T extends IDaoEntity> List<T> loadList(Class<T> tClass, String where, String... arg) {
+        AbstractDao<T, ?> dao = getDao(tClass);
+        return dao.queryRaw(where, arg);
+    }
+
     /**
      * 加载数据列表(同步)
      *

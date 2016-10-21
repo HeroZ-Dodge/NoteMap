@@ -57,7 +57,7 @@ public class MainActivity extends BaseMVPActivity<MainPresenter> implements IMai
             startActivity(intent);
         });
         findViewById(R.id.btn_error).setOnClickListener(view -> {
-            List mapPoints = mDatabaseManager.loadList(MapPoint.class, 10);
+            List mapPoints = mDatabaseManager.loadList(MapPoint.class, "WHERE NAME =? ORDER BY NAME ASC", "222");
             Log.d("GreenDao", "Size = " + mapPoints.size());
             mTvMsg.setText("Size = " + mapPoints.size());
         });
@@ -75,10 +75,11 @@ public class MainActivity extends BaseMVPActivity<MainPresenter> implements IMai
             });
         });
         findViewById(R.id.btn_delete).setOnClickListener(v -> {
-            List<MapPoint> list = mDatabaseManager.loadList(MapPoint.class, 3);
-            mDatabaseManager.delete(list, MapPoint.class, null);
-            Log.d("GreenDao", "删除前三条记录");
-            mTvMsg.setText("删除前三条记录");
+            MapPoint mapPoint = new MapPoint(null, "222", "2342");
+//            List<MapPoint> list = mDatabaseManager.loadList(MapPoint.class, 3);
+            mDatabaseManager.delete(mapPoint);
+//            Log.d("GreenDao", "删除前三条记录");
+//            mTvMsg.setText("删除前三条记录");
 
         });
     }
