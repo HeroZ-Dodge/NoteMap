@@ -106,6 +106,8 @@ public class MainActivity extends BaseMVPActivity<MainPresenter> implements IMai
         return super.onCreateOptionsMenu(menu);
     }
 
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -118,4 +120,9 @@ public class MainActivity extends BaseMVPActivity<MainPresenter> implements IMai
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+
+
+
 }
