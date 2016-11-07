@@ -36,6 +36,19 @@
         android:id="@+id/btn_empty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="empty"/>w
+        android:text="empty"/>
+
+
+    <Button
+        android:id="@+id/btn_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="删除大于5的数据"/>
+
+    <TextView
+        android:id="@+id/tv_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
 
 </LinearLayout>

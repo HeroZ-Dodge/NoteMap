@@ -1,10 +1,8 @@
 package com.dodge.hero.notemap.view.activity.impl;
 
 import android.util.Log;
-import android.widget.Toast;
 
 import com.baidu.location.BDLocation;
-import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.baidu.location.Poi;
@@ -18,8 +16,12 @@ import com.baidu.mapapi.model.LatLng;
 import com.dodge.hero.commontlibrary.data.cache.ICache;
 import com.dodge.hero.commontlibrary.view.activity.BaseActivity;
 import com.dodge.hero.notemap.R;
+import com.dodge.hero.notemap.data.CacheConstant;
+import com.dodge.hero.notemap.di.DI;
 
 import java.util.List;
+
+import javax.inject.Inject;
 
 /**
  * Created by z on 2016/10/10.
@@ -27,11 +29,14 @@ import java.util.List;
 
 public class MapActivity extends BaseActivity {
 
+    public static final int SCAN_SPAN = 10 * 1000;
 
     private MapView mMapView;
     private BaiduMap mMap;
     private LocationClient mLocationClient;
 
+    @Inject
+    ICache mCache;
 
     @Override
     protected int getLayoutRes() {
@@ -40,20 +45,23 @@ public class MapActivity extends BaseActivity {
 
     @Override
     public void initView() {
-
+        DI.makeActivityComponent(this).inject(this);
         initMap();
     }
 
     private void initMap() {
         mMapView = (MapView) findViewById(R.id.map_view);
         mMap = mMapView.getMap();
+        LatLng latLng = mCache.get(CacheConstant.LAST_MAP_LOCATION, LatLng.class);
+        if (latLng != null) {
+            mMap.setMapStatus(MapStatusUpdateFactory.newLatLng(latLng));
+        }
         mMap.setMapType(BaiduMap.MAP_TYPE_NORMAL);
         mMap.setMyLocationEnabled(true);// 开启定位图层
         LocationClientOption option = new LocationClientOption();
         option.setLocationMode(LocationClientOption.LocationMode.Hight_Accuracy);//可选，默认高精度，设置定位模式，高精度，低功耗，仅设备
         option.setCoorType("bd09ll");//可选，默认gcj02，设置返回的定位结果坐标系
-        int span = 1000;
-        option.setScanSpan(span);//可选，默认0，即仅定位一次，设置发起定位请求的间隔需要大于等于1000ms才是有效的
+        option.setScanSpan(SCAN_SPAN);//可选，默认0，即仅定位一次，设置发起定位请求的间隔需要大于等于1000ms才是有效的
         option.setIsNeedAddress(true);//可选，设置是否需要地址信息，默认不需要
         option.setOpenGps(true);//可选，默认false,设置是否使用gps
         option.setLocationNotify(true);//可选，默认false，设置是否当GPS有效时按照1S/1次频率输出GPS结果
@@ -132,12 +140,18 @@ public class MapActivity extends BaseActivity {
         mLocationClient.stop();
         MyLocationData myLocationData = new MyLocationData.Builder().latitude(location.getLatitude()).longitude(location.getLongitude()).build();
         mMap.setMyLocationData(myLocationData);
-        MapStatusUpdate mapStatusUpdate = MapStatusUpdateFactory.newLatLng(new LatLng(location.getLatitude(), location.getLongitude()));
-        mMap.animateMapStatus(mapStatusUpdate, 3000);
+        MapStatus mapStatus = new  MapStatus.Builder()
+                .target(new LatLng(location.getLatitude(), location.getLongitude()))
+                .zoom(15)
+                .build();
+        MapStatusUpdate mapStatusUpdate = MapStatusUpdateFactory.newMapStatus(mapStatus);
+        mMap.animateMapStatus(mapStatusUpdate, 1000);
     }
 
     @Override
     protected void initData() {
+
+
 
     }
 
@@ -161,6 +175,10 @@ public class MapActivity extends BaseActivity {
     protected void onDestroy() {
         super.onDestroy();
         //在activity执行onDestroy时执行mMapView.onDestroy()，实现地图生命周期管理
+        if (mMap != null && mMap.getLocationData() != null) {
+            LatLng latLng = new LatLng(mMap.getLocationData().latitude, mMap.getLocationData().longitude);
+            mCache.set(CacheConstant.LAST_MAP_LOCATION, latLng, LatLng.class, 0);
+        }
         mMapView.onDestroy();
     }
 }
