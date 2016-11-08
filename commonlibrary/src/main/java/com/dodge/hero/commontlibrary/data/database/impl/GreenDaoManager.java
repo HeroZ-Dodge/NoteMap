@@ -27,7 +27,8 @@ public class GreenDaoManager implements IDatabaseManager {
     }
 
     @SuppressWarnings("unchecked")
-    private <T extends AbstractDao> T getDao(Class<? extends IDaoEntity> entityClass) {
+    @Override
+    public <T extends AbstractDao> T getDao(Class<? extends IDaoEntity> entityClass) {
         AbstractDao<?, ?> dao = mDaoSession.getDao(entityClass);
         if (dao == null) {
             throw new IllegalStateException("找不到" + entityClass.getName() + "对应的Dao");

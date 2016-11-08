@@ -14,9 +14,12 @@ import com.dodge.hero.commontlibrary.data.database.IDatabaseManager;
 import com.dodge.hero.commontlibrary.view.activity.BaseMVPActivity;
 import com.dodge.hero.notemap.R;
 import com.dodge.hero.notemap.data.entity.MapPoint;
+import com.dodge.hero.notemap.data.entity.TestUser;
 import com.dodge.hero.notemap.di.DI;
 import com.dodge.hero.notemap.presenter.MainPresenter;
 import com.dodge.hero.notemap.view.activity.IMainActivity;
+import com.dodge.hero.notemap.view.dialog.GiftsFullScreenDialog;
+import com.google.gson.Gson;
 
 import java.util.List;
 
@@ -75,11 +78,20 @@ public class MainActivity extends BaseMVPActivity<MainPresenter> implements IMai
             });
         });
         findViewById(R.id.btn_delete).setOnClickListener(v -> {
-            MapPoint mapPoint = new MapPoint(null, "222", "2342");
-//            List<MapPoint> list = mDatabaseManager.loadList(MapPoint.class, 3);
-            mDatabaseManager.delete(mapPoint);
-//            Log.d("GreenDao", "删除前三条记录");
-//            mTvMsg.setText("删除前三条记录");
+//            AbstractDao<TestUser, ?> dao = mDatabaseManager.getDao(TestUser.class);
+//            dao.queryBuilder()
+//                    .where(TestUserDao.Properties.Address.eq("1111"))
+//                    .whereOr(TestUserDao.Properties.YearsOld.eq("2"), TestUserDao.Properties.MId.eq(""))
+//                    .build()
+//                    .list();
+//            MapPoint mapPoint = new MapPoint(null, "222", "2342");
+////            List<MapPoint> list = mDatabaseManager.loadList(MapPoint.class, 3);
+//            mDatabaseManager.delete(mapPoint);
+////            Log.d("GreenDao", "删除前三条记录");
+////            mTvMsg.setText("删除前三条记录");
+//            TestDialog dialog = new TestDialog();
+            GiftsFullScreenDialog dialog = new GiftsFullScreenDialog();
+            dialog.show(getSupportFragmentManager(), "Dialog");
 
         });
     }
@@ -88,6 +100,15 @@ public class MainActivity extends BaseMVPActivity<MainPresenter> implements IMai
     protected void initData() {
 
     }
+
+    private void testUser() {
+        Gson gson = new Gson();
+        TestUser testUser = new TestUser(1l, "address", 2);
+        testUser.setName("name");
+        String json = gson.toJson(testUser);
+        Log.d("json", json);
+    }
+
 
 
     @Override

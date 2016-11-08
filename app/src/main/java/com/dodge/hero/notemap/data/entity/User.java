@@ -12,13 +12,13 @@ import org.greenrobot.greendao.annotation.Generated;
 @Entity
 public class User {
     @Id
-    private long id;
+    private Long id;
 
     @NonNull
-    private String name;
+    String name;
 
-    @Generated(hash = 930343602)
-    public User(long id, @NonNull String name) {
+    @Generated(hash = 886141413)
+    public User(Long id, @NonNull String name) {
         this.id = id;
         this.name = name;
     }
@@ -27,11 +27,11 @@ public class User {
     public User() {
     }
 
-    public long getId() {
+    public Long getId() {
         return this.id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -42,5 +42,6 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
+
 
 }
