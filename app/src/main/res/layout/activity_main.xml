@@ -13,9 +13,10 @@
     tools:context="com.dodge.hero.notemap.view.activity.impl.MainActivity">
 
     <TextView
-
+        android:id="@+id/tv_hello_msg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:drawableRight="@drawable/ic_empty"
         android:text="Hello World!"/>
 
 

@@ -49,7 +49,9 @@
         </activity>
 
         <activity android:name=".view.activity.impl.TestActivity2"/>
-        <activity android:name=".view.activity.impl.TestActivity3"/>
+        <activity android:name=".view.activity.impl.TestActivity3">
+
+        </activity>
 
         <activity
             android:name=".view.activity.impl.MapActivity"
@@ -59,6 +61,11 @@
 
         <activity android:name=".view.activity.impl.ViewPagerActivity">
 
+        <activity android:name=".view.activity.impl.SuspensionActivity">
+
+        </activity>
+
+        <activity android:name=".view.activity.impl.PopupWindowActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -67,6 +74,7 @@
 
 
         </activity>
+
 
         <service
             android:name="com.baidu.location.f"
