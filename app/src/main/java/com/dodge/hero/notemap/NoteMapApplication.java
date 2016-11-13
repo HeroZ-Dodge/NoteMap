@@ -6,6 +6,7 @@ import com.baidu.mapapi.SDKInitializer;
 import com.dodge.hero.notemap.di.DI;
 
 /**
+ * 描述这个类
  * Created by z on 2016/10/10.
  */
 

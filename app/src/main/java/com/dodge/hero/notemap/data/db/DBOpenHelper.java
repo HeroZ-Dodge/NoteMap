@@ -9,6 +9,7 @@ import org.greenrobot.greendao.database.Database;
 
 
 /**
+ * 描述这个类
  * Created by LinZheng on 2016/10/14.
  */
 
