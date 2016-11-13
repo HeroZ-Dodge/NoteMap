@@ -39,6 +39,16 @@
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="qXDm5TyqIjeVrhV0YZ0Hl7p6wSTtVR4k"/>
 
+        <activity android:name=".view.activity.impl.MapPointListActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+
+
+        </activity>
+
 
         <activity android:name=".view.activity.impl.MainActivity">
 
@@ -62,11 +72,6 @@
         </activity>
 
         <activity android:name=".view.activity.impl.PopupWindowActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
 
 
         </activity>

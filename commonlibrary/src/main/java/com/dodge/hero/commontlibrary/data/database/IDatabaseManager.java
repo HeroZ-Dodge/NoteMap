@@ -31,13 +31,17 @@ public interface IDatabaseManager {
 
     <T extends IDaoEntity> void deleteAll(Class<T> tClass, AsyncCallBack<Void> asyncCallBack);
 
-    <T extends IDaoEntity> void save(T entity);
+    <T extends IDaoEntity> void insert(T entity);
 
-    <T extends IDaoEntity> void save(T entity, AsyncCallBack<T> asyncCallBack);
+    <T extends IDaoEntity> void insert(T entity, AsyncCallBack<T> asyncCallBack);
 
-    <T extends IDaoEntity> void save(Iterable<T> entities, Class<T> tClass);
+    <T extends IDaoEntity> void insert(Iterable<T> entities, Class<T> tClass);
 
-    <T extends IDaoEntity> void save(Iterable<T> entities, Class<T> tClass, AsyncCallBack<Iterable<T>> asyncCallBack);
+    <T extends IDaoEntity> void insert(Iterable<T> entities, Class<T> tClass, AsyncCallBack<Iterable<T>> asyncCallBack);
+
+    <T extends IDaoEntity> void update(T entity);
+
+    <T extends IDaoEntity> void update(T entity, AsyncCallBack<T> asyncCallBack);
 
     <T extends IDaoEntity> List<T> loadAll(Class<T> tClass);
 

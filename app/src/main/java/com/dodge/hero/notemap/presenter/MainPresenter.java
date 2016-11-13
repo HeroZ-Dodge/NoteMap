@@ -7,10 +7,10 @@ import com.dodge.hero.notemap.view.activity.IMainActivity;
  * Created by LinZheng on 2016/10/8.
  */
 
-public class MainPresenter extends BasePresenter<IMainActivity> {
+public class MainPresenter extends BasePresenter<IMainActivity, Object> {
 
     @Override
-    public void start() {
+    public void present() {
         mView.showHelloWorld();
     }
 
