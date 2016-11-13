@@ -16,7 +16,7 @@ import com.baidu.mapapi.model.LatLng;
 import com.dodge.hero.commontlibrary.data.cache.ICache;
 import com.dodge.hero.commontlibrary.view.activity.BaseActivity;
 import com.dodge.hero.notemap.R;
-import com.dodge.hero.notemap.data.CacheConstant;
+import com.dodge.hero.notemap.data.Constant;
 import com.dodge.hero.notemap.di.DI;
 
 import java.util.List;
@@ -52,7 +52,7 @@ public class MapActivity extends BaseActivity {
     private void initMap() {
         mMapView = (MapView) findViewById(R.id.map_view);
         mMap = mMapView.getMap();
-        LatLng latLng = mCache.get(CacheConstant.LAST_MAP_LOCATION, LatLng.class);
+        LatLng latLng = mCache.get(Constant.Cache.LAST_MAP_LOCATION, LatLng.class);
         if (latLng != null) {
             mMap.setMapStatus(MapStatusUpdateFactory.newLatLng(latLng));
         }
@@ -177,7 +177,7 @@ public class MapActivity extends BaseActivity {
         //在activity执行onDestroy时执行mMapView.onDestroy()，实现地图生命周期管理
         if (mMap != null && mMap.getLocationData() != null) {
             LatLng latLng = new LatLng(mMap.getLocationData().latitude, mMap.getLocationData().longitude);
-            mCache.set(CacheConstant.LAST_MAP_LOCATION, latLng, LatLng.class, 0);
+            mCache.set(Constant.Cache.LAST_MAP_LOCATION, latLng, LatLng.class, 0);
         }
         mMapView.onDestroy();
     }
