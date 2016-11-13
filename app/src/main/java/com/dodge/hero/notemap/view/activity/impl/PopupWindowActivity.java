@@ -5,6 +5,7 @@ import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.OvalShape;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.PopupWindow;
@@ -39,7 +40,8 @@ public class PopupWindowActivity extends BaseActivity {
         });
 
         mBtnRight.setOnClickListener(v -> {
-            getPopupWindow().showAsDropDown(mBtnRight, -200, 90);
+            getPopupWindow().showAtLocation(mBtnRight, Gravity.BOTTOM, 0, 0);
+//            getPopupWindow().showAsDropDown(mBtnRight);
         });
     }
 
