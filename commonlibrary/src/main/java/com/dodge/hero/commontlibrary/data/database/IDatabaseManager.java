@@ -2,6 +2,7 @@ package com.dodge.hero.commontlibrary.data.database;
 
 import com.dodge.hero.commontlibrary.clean.callback.AsyncCallBack;
 
+import org.greenrobot.greendao.AbstractDao;
 import org.greenrobot.greendao.query.WhereCondition;
 
 import java.util.List;
@@ -14,6 +15,9 @@ import java.util.List;
  */
 public interface IDatabaseManager {
 
+
+    @SuppressWarnings("unchecked")
+    <T extends AbstractDao> T getDao(Class<? extends IDaoEntity> entityClass);
 
     <T extends IDaoEntity> long count(Class<T> tClass);
 
@@ -40,6 +44,8 @@ public interface IDatabaseManager {
     <T extends IDaoEntity> void loadAll(Class<T> tClass, AsyncCallBack<List<T>> asyncCallBack);
 
     <T extends IDaoEntity> List<T> loadList(Class<T> tClass, int size);
+
+    <T extends IDaoEntity> List<T> loadList(Class<T> tClass, String where, String... arg);
 
     <T extends IDaoEntity> List<T> loadList(Class<T> tClass, int size, int offset);
 
