@@ -3,31 +3,29 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:background="@drawable/shape_bg_white_r_4dp"
-
               android:orientation="vertical"
               android:padding="8dp">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/transparent"/>
+
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="收藏位置"
-        android:textSize="16sp"/>
-
-    <android.support.v4.widget.Space
         android:layout_width="match_parent"
+        android:text="tetetet"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:layout_height="wrap_content"/>
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:paddingEnd="4dp"
-        android:paddingLeft="4dp"
-        android:paddingRight="4dp"
-        android:paddingStart="4dp">
-
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="4dp">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -37,9 +35,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
             android:background="@drawable/selector_edit_text_bg_gray_color_accent"
-            android:maxLines="1"
             android:padding="8dp"/>
 
 
@@ -49,12 +45,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:paddingEnd="4dp"
-        android:paddingLeft="4dp"
-        android:paddingRight="4dp"
-        android:paddingStart="4dp">
-
+        android:orientation="horizontal"
+        android:padding="4dp">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -64,9 +56,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
             android:background="@drawable/selector_edit_text_bg_gray_color_accent"
-            android:maxLines="1"
             android:padding="8dp"/>
 
 
@@ -76,12 +66,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:paddingEnd="4dp"
-        android:paddingLeft="4dp"
-        android:paddingRight="4dp"
-        android:paddingStart="4dp">
-
+        android:orientation="horizontal"
+        android:padding="4dp">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -91,87 +77,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
             android:background="@drawable/selector_edit_text_bg_gray_color_accent"
-            android:maxLines="1"
-            android:padding="8dp"/>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:paddingEnd="4dp"
-        android:paddingLeft="4dp"
-        android:paddingRight="4dp"
-        android:paddingStart="4dp">
-
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_near_by"/>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@drawable/selector_edit_text_bg_gray_color_accent"
-            android:maxLines="1"
-            android:padding="8dp"/>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:paddingEnd="4dp"
-        android:paddingLeft="4dp"
-        android:paddingRight="4dp"
-        android:paddingStart="4dp">
-
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_near_by"/>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@drawable/selector_edit_text_bg_gray_color_accent"
-            android:maxLines="1"
-            android:padding="8dp"/>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:paddingEnd="4dp"
-        android:paddingLeft="4dp"
-        android:paddingRight="4dp"
-        android:paddingStart="4dp">
-
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_near_by"/>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@drawable/selector_edit_text_bg_gray_color_accent"
-            android:maxLines="1"
             android:padding="8dp"/>
 
 
