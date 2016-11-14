@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import com.dodge.hero.commontlibrary.R;
@@ -51,8 +50,8 @@ public abstract class BaseActivity extends AppCompatActivity implements IBaseVie
         super.onCreate(savedInstanceState);
         setContentView(getLayoutRes());
         initToolbar();          // 初始工具栏
-        initExpansionView();    //  初始扩展视图
         initView();             //  初始控件
+        initExpansionView();    //  初始扩展视图
         initData();             //  初始数据
     }
 
@@ -65,7 +64,7 @@ public abstract class BaseActivity extends AppCompatActivity implements IBaseVie
 
     @NonNull
     @Override
-    public ViewGroup getContentLayout() {
+    public FrameLayout getContentLayout() {
         return mFrameLayout;
     }
 
@@ -86,7 +85,7 @@ public abstract class BaseActivity extends AppCompatActivity implements IBaseVie
      * 初始化扩展视图
      */
     protected void initExpansionView() {
-        mExpansionView = ExpansionViewProvider.DEFAULT.createExpansionView(mFrameLayout);
+        mExpansionView = ExpansionViewProvider.DEFAULT.createExpansionView(getContentLayout());
         mExpansionView.setClickListener(this);
     }
 

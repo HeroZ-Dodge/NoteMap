@@ -125,9 +125,9 @@ public class GreenDaoManager implements IDatabaseManager {
      * @param <T>    泛型
      */
     @Override
-    public <T extends IDaoEntity> void save(T entity) {
+    public <T extends IDaoEntity> void insert(T entity) {
         AbstractDao<T, ?> dao = getDao(entity.getClass());
-        dao.save(entity);
+        dao.insert(entity);
     }
 
     /**
@@ -138,9 +138,9 @@ public class GreenDaoManager implements IDatabaseManager {
      * @param <T>           泛型
      */
     @Override
-    public <T extends IDaoEntity> void save(T entity, AsyncCallBack<T> asyncCallBack) {
+    public <T extends IDaoEntity> void insert(T entity, AsyncCallBack<T> asyncCallBack) {
         AbstractDao<T, ?> dao = getDao(entity.getClass());
-        dao.rx().save(entity)
+        dao.rx().insert(entity)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new RxCallBackSubscribe<>(asyncCallBack));
     }
@@ -153,9 +153,9 @@ public class GreenDaoManager implements IDatabaseManager {
      * @param <T>      泛型
      */
     @Override
-    public <T extends IDaoEntity> void save(Iterable<T> entities, Class<T> tClass) {
+    public <T extends IDaoEntity> void insert(Iterable<T> entities, Class<T> tClass) {
         AbstractDao<T, ?> dao = getDao(tClass);
-        dao.saveInTx(entities);
+        dao.insertInTx(entities);
     }
 
     /**
@@ -167,12 +167,28 @@ public class GreenDaoManager implements IDatabaseManager {
      * @param <T>           泛型
      */
     @Override
-    public <T extends IDaoEntity> void save(Iterable<T> entities, Class<T> tClass, AsyncCallBack<Iterable<T>> asyncCallBack) {
+    public <T extends IDaoEntity> void insert(Iterable<T> entities, Class<T> tClass, AsyncCallBack<Iterable<T>> asyncCallBack) {
         AbstractDao<T, ?> dao = getDao(tClass);
-        dao.rx().saveInTx(entities)
+        dao.rx().insertInTx(entities)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new RxCallBackSubscribe<>(asyncCallBack));
     }
+
+
+    @Override
+    public <T extends IDaoEntity> void update(T entity) {
+        AbstractDao<T, ?> dao = getDao(entity.getClass());
+        dao.insertOrReplace(entity);
+    }
+
+    @Override
+    public <T extends IDaoEntity> void update(T entity, AsyncCallBack<T> asyncCallBack) {
+        AbstractDao<T, ?> dao = getDao(entity.getClass());
+        dao.rx().insertOrReplace(entity)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new RxCallBackSubscribe<>(asyncCallBack));
+    }
+
 
     /**
      * 加载所以列表(同步)

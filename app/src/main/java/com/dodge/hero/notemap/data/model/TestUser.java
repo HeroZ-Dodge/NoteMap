@@ -1,4 +1,4 @@
-package com.dodge.hero.notemap.data.entity;
+package com.dodge.hero.notemap.data.model;
 
 import com.dodge.hero.commontlibrary.data.database.IDaoEntity;
 

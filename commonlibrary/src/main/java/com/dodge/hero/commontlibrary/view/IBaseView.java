@@ -1,7 +1,7 @@
 package com.dodge.hero.commontlibrary.view;
 
 import android.support.annotation.NonNull;
-import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
 import com.dodge.hero.commontlibrary.view.component.expansion.ExpansionView;
 
@@ -15,6 +15,6 @@ public interface IBaseView extends IView {
     ExpansionView getExpansionView();
 
     @NonNull
-    ViewGroup getContentLayout();
+    FrameLayout getContentLayout();
 
 }

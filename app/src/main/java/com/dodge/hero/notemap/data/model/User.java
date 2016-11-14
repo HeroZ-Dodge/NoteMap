@@ -1,4 +1,4 @@
-package com.dodge.hero.notemap.data.entity;
+package com.dodge.hero.notemap.data.model;
 
 import android.support.annotation.NonNull;
 
