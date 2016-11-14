@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableTop="@drawable/icon_location"
+            android:drawableTop="@drawable/ic_near_by"
             android:text="@string/near_by"/>
 
         <TextView
@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableTop="@drawable/icon_history"
+            android:drawableTop="@drawable/ic_history"
             android:text="@string/history_map_point_list"/>
 
 
@@ -38,7 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableTop="@drawable/icon_setting"
+            android:drawableTop="@drawable/ic_setting"
             android:text="@string/setting"/>
 
 
