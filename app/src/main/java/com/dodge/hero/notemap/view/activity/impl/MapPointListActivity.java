@@ -14,6 +14,7 @@ import com.dodge.hero.notemap.di.DI;
 import com.dodge.hero.notemap.presenter.MapPointListPresenter;
 import com.dodge.hero.notemap.view.activity.IMapPointListView;
 import com.dodge.hero.notemap.view.adapter.MapPointAdapter;
+import com.dodge.hero.notemap.view.dialog.AddMapPointDialog;
 import com.zhy.adapter.recyclerview.CommonAdapter;
 
 import java.util.List;
@@ -25,7 +26,9 @@ import javax.inject.Inject;
  * Created by LinZheng on 2016/11/13.
  */
 
-public class MapPointListActivity extends BaseMVPActivity<MapPointListPresenter> implements IMapPointListView{
+public class MapPointListActivity extends BaseMVPActivity<MapPointListPresenter> implements IMapPointListView {
+
+    public static final String DIALOG_TAG_ADD_MAP_POINT = "map_point";
 
     @Inject
     MapPointListPresenter mPresenter;
@@ -67,15 +70,16 @@ public class MapPointListActivity extends BaseMVPActivity<MapPointListPresenter>
 
 
     private void setClickListener() {
-        mTvNearBy.setOnClickListener(v ->
-                ToastUtils.showShortToast(getApplicationContext(), "TODO Near By"));
-
+        mTvNearBy.setOnClickListener(v -> onNearByClick());
         mTvHistory.setOnClickListener(v ->
                 ToastUtils.showShortToast(getApplicationContext(), "TODO History"));
-
         mTvSetting.setOnClickListener(v ->
                 ToastUtils.showShortToast(getApplicationContext(), "TODO Setting"));
+    }
 
+    private void onNearByClick() {
+        AddMapPointDialog dialog = new AddMapPointDialog();
+        dialog.show(getSupportFragmentManager(), DIALOG_TAG_ADD_MAP_POINT);
     }
 
     @Override
