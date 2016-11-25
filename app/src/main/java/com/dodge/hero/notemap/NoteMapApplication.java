@@ -14,7 +14,7 @@ public class NoteMapApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        SDKInitializer.initialize(getApplicationContext());
+        SDKInitializer.initialize(this);
         DI.initialize(this);
     }
 

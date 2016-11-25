@@ -65,7 +65,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:background="@drawable/selector_edit_text_bg_gray_color_accent"
+            android:text="23424242"
+            android:background="@drawable/shape_edit_text_focused_bg"
             android:maxLines="1"
             android:padding="8dp"/>
 
@@ -92,7 +93,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:background="@drawable/selector_edit_text_bg_gray_color_accent"
+            android:text="242343242"
+
+            android:background="@drawable/shape_edit_text_normal_bg"
             android:maxLines="1"
             android:padding="8dp"/>
 

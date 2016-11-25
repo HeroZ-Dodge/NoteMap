@@ -43,6 +43,23 @@ public class MapPointListPresenter extends BasePresenter<IMapPointListView, Obje
         present();
     }
 
+    public void loadNearByPoint(int page, int pageSize) {
+
+
+
+
+
+
+    }
+
+
+    public void loadHistoryPoint(int page, int pageSize) {
+
+    }
+
+
+
+
 
     public void loadNextPage() {
         mCurrentPage += 1;
