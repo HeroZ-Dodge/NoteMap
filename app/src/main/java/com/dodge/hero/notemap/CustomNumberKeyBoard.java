@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 /**
+ * 描述这个类
  * Created by LinZheng on 2016/10/27.
  */
 
