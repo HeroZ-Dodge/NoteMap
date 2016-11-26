@@ -41,17 +41,17 @@
 
         <activity android:name=".view.activity.impl.MapPointListActivity">
 
-
-
-        </activity>
-
-
-        <activity android:name=".view.activity.impl.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+
+        </activity>
+
+
+        <activity android:name=".view.activity.impl.MainActivity">
+
         </activity>
 
         <activity android:name=".view.activity.impl.TestActivity2"/>
