@@ -15,6 +15,7 @@
         <ImageView
             android:id="@+id/iv_circle"
             android:layout_width="130dp"
+            android:background="@drawable/gift_rank_bg"
             android:layout_height="130dp"/>
 
 
