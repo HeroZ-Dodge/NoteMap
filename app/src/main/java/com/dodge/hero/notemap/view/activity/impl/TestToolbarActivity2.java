@@ -4,14 +4,14 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import com.dodge.hero.commontlibrary.tools.EncryptUtil;
-import com.dodge.hero.commontlibrary.view.activity.BaseActivity;
+import com.dodge.hero.commontlibrary.view.activity.BaseToolbarActivity;
 import com.dodge.hero.notemap.R;
 
 /**
  * Created by LinZheng on 2016/10/9.
  */
 
-public class TestActivity2 extends BaseActivity {
+public class TestToolbarActivity2 extends BaseToolbarActivity {
 
     private String action = "";
 
@@ -31,7 +31,7 @@ public class TestActivity2 extends BaseActivity {
         setTitleStr("Test 2");
         findViewById(R.id.btn_hello).setOnClickListener(view -> {
             System.out.println(EncryptUtil.md5("123456"));
-//            Intent intent = new Intent(TestActivity2.this, TestActivity3.class);
+//            Intent intent = new Intent(TestToolbarActivity2.this, TestToolbarActivity3.class);
 //            startActivity(intent);
         });
     }

@@ -4,7 +4,7 @@ import android.graphics.drawable.Drawable;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.dodge.hero.commontlibrary.view.activity.BaseActivity;
+import com.dodge.hero.commontlibrary.view.activity.BaseToolbarActivity;
 import com.dodge.hero.notemap.R;
 
 import rx.Observable;
@@ -16,7 +16,7 @@ import rx.schedulers.Schedulers;
  * Created by LinZheng on 2016/10/9.
  */
 
-public class TestActivity3 extends BaseActivity {
+public class TestToolbarActivity3 extends BaseToolbarActivity {
 
     private TextView mTvHelloMsg;
     private Button mBtnHello;

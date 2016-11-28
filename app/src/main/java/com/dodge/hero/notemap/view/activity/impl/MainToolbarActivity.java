@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.dodge.hero.commontlibrary.view.activity.BaseMVPActivity;
+import com.dodge.hero.commontlibrary.view.activity.BaseMVPToolbarActivity;
 import com.dodge.hero.notemap.R;
 import com.dodge.hero.notemap.data.model.TestUser;
 import com.dodge.hero.notemap.presenter.MainPresenter;
@@ -18,7 +18,7 @@ import com.dodge.hero.notemap.view.expansion.IGiftAnimExpansionView;
 import com.google.gson.Gson;
 
 
-public class MainActivity extends BaseMVPActivity<MainPresenter> implements IMainActivity {
+public class MainToolbarActivity extends BaseMVPToolbarActivity<MainPresenter> implements IMainActivity {
 
     MainPresenter mPresenter;
     private Button mTvHello;
@@ -83,7 +83,7 @@ public class MainActivity extends BaseMVPActivity<MainPresenter> implements IMai
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_add:
-                Toast.makeText(MainActivity.this, "add", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainToolbarActivity.this, "add", Toast.LENGTH_SHORT).show();
                 break;
 
             default:

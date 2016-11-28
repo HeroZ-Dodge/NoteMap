@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.dodge.hero.commontlibrary.view.activity.BaseActivity;
+import com.dodge.hero.commontlibrary.view.activity.BaseToolbarActivity;
 import com.dodge.hero.notemap.R;
 
 import java.util.ArrayList;
@@ -18,7 +18,7 @@ import java.util.List;
  * Created by LinZheng on 2016/11/8.
  */
 
-public class SuspensionActivity extends BaseActivity {
+public class SuspensionToolbarActivity extends BaseToolbarActivity {
 
     private RecyclerView mRecyclerView;
     private TextView mTvHead;
@@ -102,7 +102,7 @@ public class SuspensionActivity extends BaseActivity {
 
         @Override
         public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            LayoutInflater inflater = LayoutInflater.from(SuspensionActivity.this);
+            LayoutInflater inflater = LayoutInflater.from(SuspensionToolbarActivity.this);
             return new MyViewHolder(inflater.inflate(R.layout.item_recycler_view_msg, parent, false));
         }
 

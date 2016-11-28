@@ -5,7 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 
-import com.dodge.hero.commontlibrary.view.activity.BaseActivity;
+import com.dodge.hero.commontlibrary.view.activity.BaseToolbarActivity;
 import com.dodge.hero.notemap.R;
 import com.dodge.hero.notemap.view.fragment.Fragment1;
 
@@ -16,7 +16,7 @@ import java.util.List;
  * Created by z on 2016/11/7.
  */
 
-public class ViewPagerActivity extends BaseActivity {
+public class ViewPagerToolbarActivity extends BaseToolbarActivity {
 
     private ViewPager mViewPager;
 

@@ -4,8 +4,8 @@ import com.dodge.hero.commontlibrary.dagger.ForActivity;
 import com.dodge.hero.commontlibrary.dagger.component.CommonActivityComponent;
 import com.dodge.hero.commontlibrary.dagger.module.CommonActivityModule;
 import com.dodge.hero.notemap.di.module.ActivityModule;
-import com.dodge.hero.notemap.view.activity.impl.MainActivity;
-import com.dodge.hero.notemap.view.activity.impl.MapActivity;
+import com.dodge.hero.notemap.view.activity.impl.MainToolbarActivity;
+import com.dodge.hero.notemap.view.activity.impl.MapToolbarActivity;
 import com.dodge.hero.notemap.view.activity.impl.MapPointListActivity;
 
 import dagger.Component;
@@ -24,9 +24,9 @@ import dagger.Component;
 public interface ActivityComponent extends AppComponent, CommonActivityComponent {
 
 
-    void inject(MapActivity activity);
+    void inject(MapToolbarActivity activity);
 
-    void inject(MainActivity activity);
+    void inject(MainToolbarActivity activity);
 
     void inject(MapPointListActivity activity);
 

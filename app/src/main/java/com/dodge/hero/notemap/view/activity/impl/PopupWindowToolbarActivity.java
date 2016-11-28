@@ -10,14 +10,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.PopupWindow;
 
-import com.dodge.hero.commontlibrary.view.activity.BaseActivity;
+import com.dodge.hero.commontlibrary.view.activity.BaseToolbarActivity;
 import com.dodge.hero.notemap.R;
 
 /**
  * Created by LinZheng on 2016/11/11.
  */
 
-public class PopupWindowActivity extends BaseActivity {
+public class PopupWindowToolbarActivity extends BaseToolbarActivity {
 
     private View mBtnLeft;
     private View mBtnRight;

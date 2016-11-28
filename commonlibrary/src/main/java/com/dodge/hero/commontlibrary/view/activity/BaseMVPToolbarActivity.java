@@ -7,7 +7,7 @@ import com.dodge.hero.commontlibrary.presenter.BasePresenter;
  * Created by LinZheng on 2016/10/8.
  */
 
-public abstract class BaseMVPActivity<P extends BasePresenter> extends BaseActivity {
+public abstract class BaseMVPToolbarActivity<P extends BasePresenter> extends BaseToolbarActivity {
 
 
     @Override

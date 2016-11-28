@@ -13,7 +13,7 @@ import com.baidu.mapapi.map.MapStatusUpdateFactory;
 import com.baidu.mapapi.map.MapView;
 import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.model.LatLng;
-import com.dodge.hero.commontlibrary.view.activity.BaseActivity;
+import com.dodge.hero.commontlibrary.view.activity.BaseToolbarActivity;
 import com.dodge.hero.notemap.R;
 import com.dodge.hero.notemap.data.Constant;
 import com.dodge.hero.notemap.di.DI;
@@ -27,7 +27,7 @@ import javax.inject.Inject;
  * Created by z on 2016/10/10.
  */
 
-public class MapActivity extends BaseActivity {
+public class MapToolbarActivity extends BaseToolbarActivity {
 
     public static final int SCAN_SPAN = 10 * 1000;
 

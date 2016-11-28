@@ -50,28 +50,28 @@
         </activity>
 
 
-        <activity android:name=".view.activity.impl.MainActivity">
+        <activity android:name=".view.activity.impl.MainToolbarActivity">
 
         </activity>
 
-        <activity android:name=".view.activity.impl.TestActivity2"/>
-        <activity android:name=".view.activity.impl.TestActivity3">
+        <activity android:name=".view.activity.impl.TestToolbarActivity2"/>
+        <activity android:name=".view.activity.impl.TestToolbarActivity3">
 
         </activity>
 
         <activity
-            android:name=".view.activity.impl.MapActivity"
+            android:name=".view.activity.impl.MapToolbarActivity"
             android:configChanges="orientation|screenSize|keyboardHidden">
 
         </activity>
 
-        <activity android:name=".view.activity.impl.ViewPagerActivity"/>
+        <activity android:name=".view.activity.impl.ViewPagerToolbarActivity"/>
 
-        <activity android:name=".view.activity.impl.SuspensionActivity">
+        <activity android:name=".view.activity.impl.SuspensionToolbarActivity">
 
         </activity>
 
-        <activity android:name=".view.activity.impl.PopupWindowActivity">
+        <activity android:name=".view.activity.impl.PopupWindowToolbarActivity">
 
 
         </activity>

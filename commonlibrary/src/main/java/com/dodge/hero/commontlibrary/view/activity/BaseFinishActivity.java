@@ -14,7 +14,7 @@ import com.z.hero.dodge.ui.SliderPanel;
  * Created by Linzheng on 2016/11/26.
  */
 
-public abstract class BaseFinishActivity extends AppCompatActivity {
+public abstract class BaseFinishActivity extends BaseActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

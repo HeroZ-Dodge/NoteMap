@@ -2,7 +2,7 @@ package com.dodge.hero.notemap.view.activity.impl;
 
 import android.view.View;
 
-import com.dodge.hero.commontlibrary.view.activity.BaseActivity;
+import com.dodge.hero.commontlibrary.view.activity.BaseToolbarActivity;
 import com.dodge.hero.notemap.R;
 import com.dodge.hero.notemap.view.expansion.GiftAnimExpansionView;
 import com.dodge.hero.notemap.view.expansion.IGiftAnimExpansionView;
@@ -12,7 +12,7 @@ import com.dodge.hero.notemap.view.expansion.IGiftAnimExpansionView;
  * Created by LinZheng on 2016/11/22.
  */
 
-public class AnimActivity extends BaseActivity {
+public class AnimToolbarActivity extends BaseToolbarActivity {
 
 
     private View mBtnFlower;
