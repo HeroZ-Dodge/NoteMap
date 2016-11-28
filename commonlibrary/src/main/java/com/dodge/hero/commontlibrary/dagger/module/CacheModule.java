@@ -2,8 +2,9 @@ package com.dodge.hero.commontlibrary.dagger.module;
 
 import android.content.Context;
 
-import com.dodge.hero.commontlibrary.data.cache.ICache;
-import com.dodge.hero.commontlibrary.data.cache.impl.PreferenceCache;
+
+import com.z.hero.dodge.database.cache.ICache;
+import com.z.hero.dodge.database.cache.impl.PreferenceCache;
 
 import javax.inject.Singleton;
 

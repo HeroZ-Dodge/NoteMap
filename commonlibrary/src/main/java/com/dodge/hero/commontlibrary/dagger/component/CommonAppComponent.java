@@ -5,7 +5,7 @@ import android.content.Context;
 
 import com.dodge.hero.commontlibrary.dagger.module.CacheModule;
 import com.dodge.hero.commontlibrary.dagger.module.CommonAppModule;
-import com.dodge.hero.commontlibrary.data.cache.ICache;
+import com.z.hero.dodge.database.cache.ICache;
 
 import javax.inject.Singleton;
 

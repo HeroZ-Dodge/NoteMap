@@ -1,6 +1,7 @@
 package com.dodge.hero.notemap.data.model;
 
-import com.dodge.hero.commontlibrary.data.database.IDaoEntity;
+
+import com.z.hero.dodge.database.db.IDaoEntity;
 
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Id;
@@ -10,7 +11,7 @@ import org.greenrobot.greendao.annotation.Generated;
  * Created by LinZheng on 2016/10/24.
  */
 @Entity
-public class TestUser extends User implements IDaoEntity{
+public class TestUser extends User implements IDaoEntity {
 
     @Id
     private Long mId;

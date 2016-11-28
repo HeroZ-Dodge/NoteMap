@@ -1,7 +1,7 @@
 package com.dodge.hero.notemap.data;
 
-import com.dodge.hero.commontlibrary.data.database.IDatabaseManager;
 import com.dodge.hero.notemap.data.model.MapPoint;
+import com.z.hero.dodge.database.db.IDatabaseManager;
 
 import java.util.List;
 

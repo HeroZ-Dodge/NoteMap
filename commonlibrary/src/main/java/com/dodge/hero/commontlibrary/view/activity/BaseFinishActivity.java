@@ -6,7 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.dodge.hero.commontlibrary.view.ui.SliderPanel;
+import com.z.hero.dodge.ui.SliderPanel;
+
 
 /**
  * 描述

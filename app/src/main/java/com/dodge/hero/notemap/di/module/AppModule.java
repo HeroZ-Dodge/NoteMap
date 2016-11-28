@@ -2,11 +2,11 @@ package com.dodge.hero.notemap.di.module;
 
 import android.app.Application;
 
-import com.dodge.hero.commontlibrary.data.database.IDatabaseManager;
-import com.dodge.hero.commontlibrary.data.database.impl.GreenDaoManager;
 import com.dodge.hero.notemap.dao.DaoMaster;
 import com.dodge.hero.notemap.dao.DaoSession;
 import com.dodge.hero.notemap.data.db.DBOpenHelper;
+import com.z.hero.dodge.database.db.IDatabaseManager;
+import com.z.hero.dodge.database.db.impl.GreenDaoManager;
 
 import org.greenrobot.greendao.database.Database;
 

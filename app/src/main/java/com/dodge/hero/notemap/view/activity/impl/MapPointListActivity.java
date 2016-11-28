@@ -9,9 +9,9 @@ import android.widget.ImageView;
 
 import com.blankj.utilcode.utils.RegexUtils;
 import com.dodge.hero.commontlibrary.view.activity.BaseFinishActivity;
-import com.dodge.hero.commontlibrary.view.ui.CircleDrawable;
 import com.dodge.hero.notemap.R;
 import com.dodge.hero.notemap.view.fragment.impl.MapPointListFragment;
+import com.z.hero.dodge.ui.CircleDrawable;
 
 /**
  * 描述:

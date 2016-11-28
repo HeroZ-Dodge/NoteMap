@@ -3,8 +3,8 @@ package com.dodge.hero.notemap.di.component;
 import com.dodge.hero.commontlibrary.dagger.component.CommonAppComponent;
 import com.dodge.hero.commontlibrary.dagger.module.CacheModule;
 import com.dodge.hero.commontlibrary.dagger.module.CommonAppModule;
-import com.dodge.hero.commontlibrary.data.database.IDatabaseManager;
 import com.dodge.hero.notemap.di.module.AppModule;
+import com.z.hero.dodge.database.db.IDatabaseManager;
 
 import javax.inject.Singleton;
 
