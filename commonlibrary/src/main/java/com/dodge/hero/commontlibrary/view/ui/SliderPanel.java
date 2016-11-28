@@ -8,8 +8,6 @@ import android.view.ViewConfiguration;
 import android.view.animation.LinearInterpolator;
 import android.widget.FrameLayout;
 
-import com.dodge.hero.commontlibrary.R;
-
 
 /**
  * Created by Luoweiqiang on 2015/8/12 0012.
