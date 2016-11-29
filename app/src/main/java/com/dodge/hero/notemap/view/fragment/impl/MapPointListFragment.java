@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import com.dodge.hero.commontlibrary.view.component.expansion.ExpansionView;
+import com.dodge.hero.commontlibrary.view.component.expansion.ExpansionViewProvider;
 import com.dodge.hero.commontlibrary.view.fragment.BaseMVPFragment;
 import com.dodge.hero.notemap.R;
 import com.dodge.hero.notemap.data.model.MapPoint;
@@ -76,12 +77,12 @@ public class MapPointListFragment extends BaseMVPFragment<MapPointListPresenter>
     @NonNull
     @Override
     public ExpansionView getExpansionView() {
-        return null;
+        return ExpansionViewProvider.DEFAULT.createExpansionView(mFrameLayout);
     }
 
     @NonNull
     @Override
     public FrameLayout getContentLayout() {
-        return null;
+        return mFrameLayout;
     }
 }

@@ -15,8 +15,8 @@ import java.util.List;
 
 public class MapPointAdapter extends CommonAdapter<MapPoint> {
 
-    public MapPointAdapter(Context context, int layoutId, List<MapPoint> datas) {
-        super(context, layoutId, datas);
+    public MapPointAdapter(Context context, int layoutId, List<MapPoint> data) {
+        super(context, layoutId, data);
     }
 
     @Override

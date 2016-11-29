@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import com.dodge.hero.commontlibrary.R;
@@ -40,7 +41,7 @@ public abstract class BaseToolbarActivity extends BaseActivity implements IBaseV
     public void setContentView(@LayoutRes int layoutResID) {
         LayoutInflater inflater = getLayoutInflater();
         mRootView = inflater.inflate(R.layout.base_activity, null, false);
-        mFrameLayout = (FrameLayout) mRootView.findViewById(R.id.content_frame_layout);
+        mFrameLayout = (FrameLayout) mRootView.findViewById(R.id.content_container);
         inflater.inflate(layoutResID, mFrameLayout, true);
         super.setContentView(mRootView);
     }
