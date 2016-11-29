@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="suspension_recycler_view_def_id" type="id"/>
+    <item name="suspension_view_default_id" type="id"/>
+
+</resources>

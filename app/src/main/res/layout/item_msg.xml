@@ -11,8 +11,8 @@
         android:layout_height="wrap_content"
         android:background="#999999"
         android:gravity="center"
-        android:text="msg"
         android:padding="16dp"
+        android:text="msg"
         android:textSize="20sp"/>
 
 </LinearLayout>

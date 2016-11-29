@@ -1,6 +1,7 @@
 package com.dodge.hero.notemap.view.fragment.impl;
 
 import android.os.Bundle;
+import android.support.annotation.IntDef;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
@@ -18,6 +19,8 @@ import com.dodge.hero.notemap.data.model.MapPoint;
 import com.dodge.hero.notemap.presenter.MapPointListPresenter;
 import com.dodge.hero.notemap.view.fragment.IMapPointListView;
 
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import java.util.List;
 
 /**
@@ -29,7 +32,6 @@ public class MapPointListFragment extends BaseMVPFragment<MapPointListPresenter>
 
     private FrameLayout mFrameLayout;
     private RecyclerView mRecyclerView;
-
 
     @Nullable
     @Override
