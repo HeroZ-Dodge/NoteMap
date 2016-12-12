@@ -11,6 +11,8 @@ import android.widget.TextView;
 import com.dodge.hero.commontlibrary.view.fragment.ViewPagerFragment;
 import com.dodge.hero.notemap.R;
 
+import java.util.Random;
+
 /**
  * Created by z on 2016/11/7.
  */
@@ -52,6 +54,18 @@ public class Fragment1 extends ViewPagerFragment {
         Log.d(getTAG(), "onCreateView");
         if (rootView == null) {
             rootView = inflater.inflate(R.layout.fragmetn_content, container, false);
+            Random random = new Random();
+            int n = random.nextInt();
+            int x = n % 3;
+            if (x == 0) {
+                rootView.setBackgroundResource(R.color.white_100);
+
+            } else if (x == 1) {
+                rootView.setBackgroundResource(R.color.text_color_black_57);
+
+            } else {
+                rootView.setBackgroundResource(R.color.colorPrimary);
+            }
         }
         return rootView;
     }

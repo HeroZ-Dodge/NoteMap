@@ -39,6 +39,8 @@ public class ViewPagerToolbarActivity extends BaseToolbarActivity {
         fragmentList.add(Fragment1.create("4"));
         fragmentList.add(Fragment1.create("5"));
         MyViewPagerAdapter adapter = new MyViewPagerAdapter(getSupportFragmentManager(), fragmentList);
+        mViewPager.setPageMargin(50);
+        mViewPager.setOffscreenPageLimit(3);
         mViewPager.setAdapter(adapter);
     }
 

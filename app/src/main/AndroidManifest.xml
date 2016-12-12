@@ -41,11 +41,7 @@
 
 
         <activity android:name=".view.activity.impl.TestSusActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
 
         </activity>
 
@@ -71,7 +67,15 @@
 
         </activity>
 
-        <activity android:name=".view.activity.impl.ViewPagerToolbarActivity"/>
+        <activity android:name=".view.activity.impl.ViewPagerToolbarActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+
+
+        </activity>
 
         <activity android:name=".view.activity.impl.SuspensionToolbarActivity">
 
