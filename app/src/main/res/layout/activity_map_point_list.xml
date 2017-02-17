@@ -2,30 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@drawable/app_back_group"
               android:orientation="vertical">
-
-
-    <FrameLayout
-        android:id="@+id/frame_layout"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
-        <ImageView
-            android:id="@+id/iv_circle"
-            android:layout_width="130dp"
-            android:background="@drawable/gift_rank_bg"
-            android:layout_height="130dp"/>
-
-
-    </FrameLayout>
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white_10"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="4dp"
         android:orientation="horizontal">
 
 
@@ -35,8 +20,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableTop="@drawable/ic_near_by"
-            android:text="@string/near_by"/>
+            android:drawableLeft="@drawable/ic_near_by"
+            android:drawableStart="@drawable/ic_near_by"
+            android:gravity="center"
+            android:text="@string/near_by"
+            android:textColor="@drawable/color_tab_text_color"/>
 
         <TextView
             android:id="@+id/tv_history"
@@ -44,7 +32,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableTop="@drawable/ic_history"
+            android:drawableLeft="@drawable/ic_history"
+            android:drawableStart="@drawable/ic_history"
             android:text="@string/history_map_point_list"/>
 
 
@@ -54,11 +43,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableTop="@drawable/ic_setting"
+            android:drawableLeft="@drawable/ic_setting"
+            android:drawableStart="@drawable/ic_setting"
             android:text="@string/setting"/>
 
 
     </LinearLayout>
+
+
+    <FrameLayout
+        android:id="@+id/frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+
+    </FrameLayout>
 
 
 </LinearLayout>
