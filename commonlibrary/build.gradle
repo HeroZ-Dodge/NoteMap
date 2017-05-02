@@ -3,12 +3,12 @@ apply plugin: 'me.tatarka.retrolambda'
 apply plugin: 'com.neenbedankt.android-apt' // dagger2
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.2"
+    compileSdkVersion androidCompileSdkVersion
+    buildToolsVersion androidBuildToolsVersion
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 24
+        minSdkVersion androidMinSdkVersion
+        targetSdkVersion androidTargetSdkVersion
         versionCode 1
         versionName "1.0"
         vectorDrawables.useSupportLibrary = true
